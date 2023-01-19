@@ -1,0 +1,136 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  position: relative;
+}
+
+.container{
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(6, 6, 129, 0.753);
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  justify-items: center ;
+  align-items: center;
+  grid-template-columns: repeat(3,auto);
+  gap: 5px;
+}
+
+.cell{
+  width: 100px;
+  height: 100px;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.cell.x,
+.cell.circle {
+  cursor:not-allowed;
+}
+
+.cell.x::after ,
+.cell.x::before,
+.container.x .cell:not(.x):not(.circle):hover::before,
+.container.x .cell:not(.x):not(.circle):hover::after
+{ content: "";
+  width : 15px ;
+  height: 90px;
+  background-color: rgba(255, 255, 255, 0.479);
+  position: absolute;
+
+}
+
+.cell.x::after ,
+.cell.x::before{
+  background-color: white;
+}
+
+
+.cell.x::after,
+.container.x .cell:not(.x):not(.circle):hover::after
+{
+  transform: rotate(-45deg);
+}
+
+.cell.x::before,
+.container.x .cell:not(.x):not(.circle):hover::before {
+  transform: rotate(45deg);
+}
+
+.cell.circle::after,
+.cell.circle::before,
+.container.circle .cell:not(.x):not(.circle):hover::after,
+.container.circle .cell:not(.x):not(.circle):hover::before
+{ content: "";
+  width : 90px ;
+  height: 90px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.247);
+  position: absolute;
+}
+
+.cell.circle::after,
+.cell.circle::before
+{
+  background-color: white;
+}
+
+.cell.circle::after,
+.container.circle .cell:not(.x):not(.circle):hover::after{
+  content: "";
+  width: 60px;
+  height: 60px;
+  background-color: black;
+}
+
+.result.show {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column ;
+  background-color: rgba(0, 0, 0, 0.678);
+  align-items: center;
+  justify-content: center;
+}
+
+.result{
+  display: none;
+}
+
+.result.show button{
+  background-color: blueviolet;
+  color: antiquewhite;
+  border: none;
+  border-radius: 3px;
+  padding: 10px 25px;
+  font-size: 30px;
+  margin: 15px;
+  transition: all 0.2s ease;
+}
+
+.result.show .message {
+  font-size: 35px;
+  color: white;
+}
+
+.result.show button:hover,
+.result.show button:focus{
+  background-color:rgb(65, 9, 117) ;
+}
+
+.result.show button:active{
+  transform: scale(0.8);
+}
+

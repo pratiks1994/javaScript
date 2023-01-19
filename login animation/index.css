@@ -1,0 +1,87 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(1, 1, 80);   
+}
+
+.container{
+    background-color: rgba(0, 0, 0, 0.363);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width : 500px ;
+    margin-inline: auto ;
+    padding : 20px ; 
+    border-radius: 10px;
+    box-shadow: 3px 1px 5px rgb(0, 0, 0);
+}
+
+h1 {
+    margin: 20px;
+}
+
+
+.password, .email{
+    position: relative;
+    margin: 10px;
+}
+
+.password input,
+.email input{
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid white;
+    margin: 15px;
+    padding: 5px;
+    color: white;
+    font-size: 1.2rem;
+}
+
+.password input:valid,
+.email input:focus{
+    outline: none;
+}
+
+.password label,
+.email label  {
+    position: absolute;
+    top : 19px ;
+    left : 20px; 
+}
+
+.password label span,
+.email label span{
+    font-size: 1rem;
+    display: inline-block;
+    transition: all 0.2s ease-in-out ;
+}
+
+.password input:focus+ label span,
+.email input:focus + label span {
+    transform: translateY(-25px) ;
+    position: relative
+}
+
+.button{
+    flex : 1 ;
+    border: none ; 
+    padding : 5px 110px;
+    margin: 20px;
+    font-size: 1.2rem;
+    color: white;
+    background-color: black;
+    border-radius: 10px;
+    box-shadow: 3px 1px 5px rgb(0, 0, 0)
+    
+}
